@@ -40,7 +40,7 @@ public class EmployeeDao {
             rs=ps.executeQuery();
             while(rs.next()){
                 Employee employee=new Employee();
-                employee.setId(rs.getInt("id"));
+                employee.setId(rs.getInt("employeeid"));
                 employee.setName(rs.getString("name"));
                 employee.setEmail(rs.getString("email"));
                 employee.setPhone(rs.getString("phone"));
@@ -76,7 +76,7 @@ public class EmployeeDao {
     public int deleteEmployee(int id) {
         int status=0;
         Connection con=DBHelper.getInstance().getConnection();
-        String query="DELETE FROM employee WHERE id=?";
+        String query="DELETE FROM employee WHERE employeeid=?";
         try {
             PreparedStatement ps=con.prepareStatement(query);
             ps.setInt(1, id);
@@ -95,13 +95,13 @@ public class EmployeeDao {
         ResultSet rs;
         Employee emp=new Employee();
         Connection con=DBHelper.getInstance().getConnection();
-        String query="SELECT * FROM employee WHERE id=?";
+        String query="SELECT * FROM employee WHERE employeeid=?";
         try {
             PreparedStatement ps=con.prepareStatement(query);
             ps.setInt(1, id);
             rs=ps.executeQuery();
             while(rs.next()) {
-                emp.setId(rs.getInt("id"));
+                emp.setId(rs.getInt("employeeid"));
                 emp.setName(rs.getString("name"));
                 emp.setEmail(rs.getString("email"));
                 emp.setPhone(rs.getString("phone"));

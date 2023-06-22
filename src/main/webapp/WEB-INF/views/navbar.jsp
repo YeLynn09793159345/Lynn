@@ -52,6 +52,16 @@
 
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    User
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/user/create">Create</a>
+                    <a class="dropdown-item" href="/user/view">View</a>
+
+                </div>
+            </li>
         </ul>
 
     </div>
